@@ -1,19 +1,20 @@
 #! /bin/sh
-# /etc/init.d/mounthdd
- 
+# /etc/init.d/automount
+
 case "$1" in
   start)
     echo "Mounting HDD..."
     # run application you want to start
-    sudo mount /dev/sda2 /home/pi/mount
+    sudo mount /dev/sda1 /home/pi/FTP
     ;;
   stop)
     echo "Unmounting HDD..."
     # kill application you want to stop
-    sudo umount /dev/sda2
+    sudo umount /dev/sd1
     ;;
   *)
-    echo "Usage: /etc/init.d/mounthdd {start|stop}"
+    echo "Usage: /etc/init.d/automount {start|stop}"
     exit 1
     ;;
 esac
+
