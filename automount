@@ -1,0 +1,19 @@
+#! /bin/sh
+# /etc/init.d/mounthdd
+ 
+case "$1" in
+  start)
+    echo "Mounting HDD..."
+    # run application you want to start
+    sudo mount /dev/sda2 /home/pi/mount
+    ;;
+  stop)
+    echo "Unmounting HDD..."
+    # kill application you want to stop
+    sudo umount /dev/sda2
+    ;;
+  *)
+    echo "Usage: /etc/init.d/mounthdd {start|stop}"
+    exit 1
+    ;;
+esac
